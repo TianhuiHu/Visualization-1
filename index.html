@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<meta charset="utf-8">
+<html>
+<head>
+    <title>Visualization - Project-I</title>
+    <style>
+
+    	.g_pointer{
+    		cursor:pointer;
+    		pointer-events: all;
+    	}
+		body {
+		    margin: 0;
+		}
+		h2 {
+			text-align: center;
+		}
+
+		ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    width: 15%;
+		    background-color: #333;
+		    position: fixed;
+		    height: 100%;
+		    overflow: auto;
+		}
+
+		li a {
+		    display: block;
+		    color: white;
+		    padding: 8px 16px;
+		    text-decoration: none;
+		}
+
+		li a.active {
+		    background-color: #4CAF50;
+		    color: white;
+		}
+
+		li a:hover:not(.active) {
+		    background-color: #111;
+		    color: #4CAF50;
+		}
+      /*.d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+      }*/
+      .d3-tip {
+		  line-height: 1;
+		  font-weight: bold;
+		  padding: 10px;
+		  background:#111;
+		  color: #4CAF50;
+		  border-radius: 2px;
+		}
+
+/* Creates a small triangle extender for the tooltip */
+	.d3-tip:after {
+	  box-sizing: border-box;
+	  display: inline;
+	  font-size: 10px;
+	  width: 100%;
+	  line-height: 1;
+	  color: rgba(0, 0, 0, 0.8);
+	  content: "\25BC";
+	  position: absolute;
+	  text-align: center;
+	}
+
+/* Style northward tooltips differently */
+	.d3-tip.n:after {
+	  margin: -1px 0 0 0;
+	  top: 100%;
+	  left: 0;
+	}
+      .bar rect {
+        /*fill: steelblue;*/
+        shape-rendering: crispEdges;
+      }
+      .bar rect:hover{
+        width: rgba(0,0,0,.8);
+        }
+      .axis path, .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+    </style>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="script.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js">
+    </script>
+    
+</head>
+  <body>
+  	<ul>
+  		<li><a href="#home">Home</a></li>
+  		<li><a href="#criticalReading" id="data1">Critical Reading Score</a></li>
+  		<li><a href="#Math" id="data2">Math Score</a></li>
+  		<li><a href="#write" id="data3">Writing Score</a></li>
+	</ul>
+<!--       <div id="demo">
+        <div id="buttons">
+            <button id="data1">Set Data to data 1</button>
+            <button id="data2">Set Data to data 2</button>
+        </div>
+    </div> -->
+    <script>
+init();
+    </script>
+    <div id="root" style="margin-left:15%;padding:1px 16px;">
+    	<h2>Number of colleges in SAT  Average score ranges</h2>
+	    <div id="critical" class="graph"></div>
+	    <!-- <div id="math" style="display: none;"class="graph"></div>
+	    <div id="write" style="display: none;"class="graph"></div>
+	    <div id="piecritical" style="display: inline;"class="graph"></div>
+	    <div id="piemath" style="display: none;"class="graph"></div>
+	    <div id="piewrite" style="display: none;"class="graph"></div> -->
+    </div>
+  </body>
+</html>
